@@ -95,12 +95,6 @@ document.getElementById('save-button').addEventListener('click', function(){
         else{
             savingBalanceError.style.display = 'block';
         }
-        /* const newSavings = previousBalance / savingInputAmount;
-        savings.innerText = newSavings;
-
-          // remainings
-    const newRemainings = previousBalance - newSavings;
-    remainings.innerText = newRemainings; */
     }
     else{
         savingsError.style.display = 'block';
