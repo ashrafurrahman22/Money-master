@@ -20,9 +20,6 @@ document.getElementById('calculate-button').addEventListener('click', function()
             const totalExpense = document.getElementById('total-expense');
            const previousExpenseAmountText = totalExpense.innerText;
             const previousExpenseAmount = parseFloat(previousExpenseAmountText); 
-                   
-           const newExpenseAmount = previousExpenseAmount + foodAmount + rentAmount + otherAmount;
-           totalExpense.innerText = newExpenseAmount; 
 
 
             // get balance amount and update 
@@ -30,9 +27,58 @@ document.getElementById('calculate-button').addEventListener('click', function()
             const previousBalanceText = balanceAmount.innerText;
             const previousBalance = parseFloat(previousBalanceText);
 
-            // update balance amount 
-            const newBalance = incomeAmount - newExpenseAmount;
-            balanceAmount.innerText = newBalance;       
+            // get negative error field 
+            const negativeError = document.getElementById('negative-error');
+
+
+            const expenseError = document.getElementById('expense-error');
+            if(incomeAmount, foodAmount , rentAmount, otherAmount >0){
+                   
+            const newExpenseAmount = previousExpenseAmount + foodAmount + rentAmount + otherAmount;
+            totalExpense.innerText = newExpenseAmount; 
+        
+            if(newExpenseAmount <= incomeAmount){
+                const newBalance = incomeAmount - newExpenseAmount;
+                balanceAmount.innerText = newBalance;
+             }
+             else{
+                expenseError.style.display = 'block';
+             }
+        }
+            else {
+                negativeError.style.display = 'block'
+            } 
+
+                // update balance amount 
+             /* const newBalance = incomeAmount - newExpenseAmount;
+             balanceAmount.innerText = newBalance; } */
+
+
+             
+             /* if(newExpenseAmount <= incomeAmount){
+                const newBalance = incomeAmount - newExpenseAmount;
+                balanceAmount.innerText = newBalance;
+             }
+             else{
+                expenseError.style.display = 'block';
+             } */
+
+            /* else {
+                negativeError.style.display = 'block'
+            }  */
+            
+           /*  // get expense error 
+            const expenseError = document.getElementById('expense-error');
+            if(newBalance > incomeAmount){
+                const newBalance = incomeAmount - newExpenseAmount;
+                balanceAmount.innerText = newBalance; 
+            }
+            else{
+                expenseError.style.display = 'block';
+            } */
+
+            
+                 
 });
 
 
@@ -53,19 +99,25 @@ document.getElementById('save-button').addEventListener('click', function(){
     const savingAmountText = savings.innerText;
     const savingAmount = parseFloat(savingAmountText);
 
-    const newSavings = previousBalance / savingInputAmount;
-    savings.innerText = newSavings;
-
-
     // get remaining balance and float it
     const remainings = document.getElementById('remaining-balance');
     const remainingBalanceText = remainings.innerText;
     const remainingBalance = parseFloat(remainingBalanceText);
 
+    // get saving error 
+    const savingsError = document.getElementById('savings-error');
 
-    // remainings
+    if(savingInputAmount > 0){
+        const newSavings = previousBalance / savingInputAmount;
+        savings.innerText = newSavings;
+
+          // remainings
     const newRemainings = previousBalance - newSavings;
     remainings.innerText = newRemainings;
+    }
+    else{
+        savingsError.style.display = 'block';
+    }
     
 });
 

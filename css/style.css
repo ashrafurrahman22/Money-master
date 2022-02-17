@@ -10,7 +10,7 @@ input{
     width: 25%;
     border-radius: 8px;
 };
-.notify {
+.notify{
     color: #fff;
     text-align: center;
     margin: 0 auto;
@@ -20,7 +20,20 @@ input{
     padding: 5px 20px;
     display: none;
 }
+
+#negative-error{
+    display: none;
+}
+#expense-error{
+    display: none;
+}
+
+#savings-error{
+    display: none;
+}
+
 .error-section{
     width: 50%;
     margin: 0 auto;
 };
+
