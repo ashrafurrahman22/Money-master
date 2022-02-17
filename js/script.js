@@ -53,38 +53,7 @@ document.getElementById('calculate-button').addEventListener('click', function()
         }
         else {
             negativeError.style.display = 'block'
-            } 
-
-                // update balance amount 
-             /* const newBalance = incomeAmount - newExpenseAmount;
-             balanceAmount.innerText = newBalance; } */
-
-
-             
-             /* if(newExpenseAmount <= incomeAmount){
-                const newBalance = incomeAmount - newExpenseAmount;
-                balanceAmount.innerText = newBalance;
-             }
-             else{
-                expenseError.style.display = 'block';
-             } */
-
-            /* else {
-                negativeError.style.display = 'block'
-            }  */
-            
-           /*  // get expense error 
-            const expenseError = document.getElementById('expense-error');
-            if(newBalance > incomeAmount){
-                const newBalance = incomeAmount - newExpenseAmount;
-                balanceAmount.innerText = newBalance; 
-            }
-            else{
-                expenseError.style.display = 'block';
-            } */
-
-            
-                 
+            }                  
 });
 
 
@@ -94,8 +63,6 @@ document.getElementById('save-button').addEventListener('click', function(){
     const balanceAmount = document.getElementById('balance-amount');
     const previousBalanceText = balanceAmount.innerText;
     const previousBalance = parseFloat(previousBalanceText);
-
-    // const previousBalance = 
     
     // get saving input amount and call to the function
     const savingInputAmount = getInputValue('saving-input');
@@ -112,14 +79,28 @@ document.getElementById('save-button').addEventListener('click', function(){
 
     // get saving error 
     const savingsError = document.getElementById('savings-error');
+    // savings is bigger than balance field
+    const savingBalanceError = document.getElementById('savings-balance-error');
 
     if(savingInputAmount > 0){
-        const newSavings = previousBalance / savingInputAmount;
+
+        if(savingInputAmount <= previousBalance){
+            const newSavings = previousBalance / savingInputAmount;
         savings.innerText = newSavings;
 
           // remainings
     const newRemainings = previousBalance - newSavings;
     remainings.innerText = newRemainings;
+        }
+        else{
+            savingBalanceError.style.display = 'block';
+        }
+        /* const newSavings = previousBalance / savingInputAmount;
+        savings.innerText = newSavings;
+
+          // remainings
+    const newRemainings = previousBalance - newSavings;
+    remainings.innerText = newRemainings; */
     }
     else{
         savingsError.style.display = 'block';

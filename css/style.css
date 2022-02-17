@@ -38,6 +38,10 @@ input{
     display: none;
 }
 
+#savings-balance-error{
+    display: none;
+}
+
 .error-section{
     width: 50%;
     margin: 0 auto;
