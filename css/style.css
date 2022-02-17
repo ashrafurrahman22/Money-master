@@ -1,0 +1,12 @@
+.container {
+    background-color: whitesmoke;
+}
+
+.second-div{
+    background-color: lightpink;
+}
+
+input{
+    width: 25%;
+    border-radius: 8px;
+};
