@@ -8,13 +8,17 @@ function getInputValue(inputId) {
     return amountValue;
 };
 
+
+
 // get calculate button and handle click event 
 document.getElementById('calculate-button').addEventListener('click', function(){
-
+            
+            // all input calls to function
             const incomeAmount = getInputValue('income-input');
             const  foodAmount = getInputValue('food-input');
             const rentAmount = getInputValue('rent-input');
             const otherAmount = getInputValue('other-input');
+
 
             // get the expense field and float it
             const totalExpense = document.getElementById('total-expense');
@@ -29,14 +33,16 @@ document.getElementById('calculate-button').addEventListener('click', function()
 
             // get negative error field 
             const negativeError = document.getElementById('negative-error');
-
-
+            // get expense Error field 
             const expenseError = document.getElementById('expense-error');
+
+            // conditions
             if(incomeAmount, foodAmount , rentAmount, otherAmount >0){
                    
             const newExpenseAmount = previousExpenseAmount + foodAmount + rentAmount + otherAmount;
             totalExpense.innerText = newExpenseAmount; 
-        
+                
+            // expense condition 
             if(newExpenseAmount <= incomeAmount){
                 const newBalance = incomeAmount - newExpenseAmount;
                 balanceAmount.innerText = newBalance;
@@ -45,8 +51,8 @@ document.getElementById('calculate-button').addEventListener('click', function()
                 expenseError.style.display = 'block';
              }
         }
-            else {
-                negativeError.style.display = 'block'
+        else {
+            negativeError.style.display = 'block'
             } 
 
                 // update balance amount 
