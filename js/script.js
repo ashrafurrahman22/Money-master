@@ -8,9 +8,6 @@ function getInputValue(inputId) {
     return amountValue;
 };
 
-
-
-
 // get calculate button and handle click event 
 document.getElementById('calculate-button').addEventListener('click', function(){
 
@@ -23,12 +20,13 @@ document.getElementById('calculate-button').addEventListener('click', function()
             const totalExpense = document.getElementById('total-expense');
             const previousExpenseAmountText = totalExpense.innerText;
             const previousExpenseAmount = parseFloat(previousExpenseAmountText);
-
+            
            const newExpenseAmount = previousExpenseAmount + foodAmount + rentAmount + otherAmount;
             totalExpense.innerText = newExpenseAmount;
 
+
             // get balance amount and update 
-             const balanceAmount = document.getElementById('balance-amount');
+            const balanceAmount = document.getElementById('balance-amount');
             const previousBalanceText = balanceAmount.innerText;
             const previousBalance = parseFloat(previousBalanceText);
 
@@ -44,14 +42,11 @@ document.getElementById('save-button').addEventListener('click', function(){
     const balanceAmount = document.getElementById('balance-amount');
     const previousBalanceText = balanceAmount.innerText;
     const previousBalance = parseFloat(previousBalanceText);
-    
-    // get saving input amount and convert to Number
-    const savingInput = document.getElementById('saving-input');
-    const savingInputAmountText = savingInput.value;
-    const savingInputAmount = parseFloat(savingInputAmountText);
 
-    // clean savings input 
-    savingInput.value = '';
+    // const previousBalance = 
+    
+    // get saving input amount and call to the function
+    const savingInputAmount = getInputValue('saving-input');
 
     // get saving amount and float
     const savings = document.getElementById('saving-amount');
