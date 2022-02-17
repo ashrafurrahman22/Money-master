@@ -19,31 +19,48 @@
              <img class="w-100 h-100" src="images/calculator.jpg" alt="">
             </div>
             <div class="col-lg-6 text-center rounded-3 second-div py-3">
+
+                
                 <!-- income part -->
                 <h4 class="mb-3">Income</h4>
                 <h4 class="mb-3">Income: <input id="income-input" type="text" value="0"></h4>
+
+
+                <!-- expense part  -->
                 <h4 class="mb-3">Expenses</h4>
                 <h4 class="mb-3">Food Expense: <input id="food-input" type="text" value="0"></h4>
                 <h4 class="mb-3">Rent Expense: <input id="rent-input" type="text" value="0"></h4>
                 <h4 class="mb-3">Other Expense: <input id="other-input" type="text" value="0"></h4>
+
+
+                <!-- calculate button  -->
                 <button id="calculate-button" class="mb-3 bg-primary bg-gradient text-white fs-4 px-3 py-2 rounded-3">Calculate</button>
-        
+                
+
+                <!-- total expense and updating balance  -->
                 <h4>Total Expense:<span id="total-expense">0</span></h4>
                 <h4>Balance:<span id="balance-amount">0</span></h4>
         
+
+                <!-- savings part  -->
                 <h4>Save: <input id="saving-input" type="text" value="0"> % <button id="save-button" class="bg-primary bg-gradient mb-3 text-white fs-4 px-3 py-2 rounded-3">Save</button></h4>
                 <h4 class="mb-3">Saving Amount:<span id="saving-amount">0</span></h4>
                 <h4 class="mb-3">Remaining Balance:<span id="remaining-balance">0</span></h4>
             </div>
           </div>
+
+
+
+          <!-- error section  -->
           <div class="error-section">
             <h5 id="negative-error" class="notify fs-4">❌error: input amount must be a number and should be positive </h5>
             <h5 id="expense-error" class="notify fs-4">❌error: expense amount must be lower than income </h5>
-
             <h5 id="savings-error" class="notify fs-4">❌error: saving amount must be a number and should be positive</h5>
         </div>
 
     </section>
+
+
     <!-- bootstrap link  -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- javascript link  -->

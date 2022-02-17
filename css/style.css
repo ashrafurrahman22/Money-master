@@ -6,10 +6,16 @@
     background-color: lightpink;
 }
 
+
+/* sizing input  */
 input{
     width: 25%;
     border-radius: 8px;
 };
+
+
+
+/* error styles */
 .notify{
     color: #fff;
     text-align: center;
