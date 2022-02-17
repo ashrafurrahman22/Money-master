@@ -57,6 +57,7 @@ document.getElementById('calculate-button').addEventListener('click', function()
 });
 
 
+
 // savings calculation 
 document.getElementById('save-button').addEventListener('click', function(){
     // get balace total and convert to number
@@ -82,19 +83,22 @@ document.getElementById('save-button').addEventListener('click', function(){
     // savings is bigger than balance field
     const savingBalanceError = document.getElementById('savings-balance-error');
 
+
+    // savings condition for strings and numbers 
     if(savingInputAmount > 0){
+        
+    // savings condition for comparison 
+                if(savingInputAmount <= previousBalance){
+                const newSavings = previousBalance / savingInputAmount;
+                 savings.innerText = newSavings;
 
-        if(savingInputAmount <= previousBalance){
-            const newSavings = previousBalance / savingInputAmount;
-        savings.innerText = newSavings;
-
-          // remainings
-    const newRemainings = previousBalance - newSavings;
-    remainings.innerText = newRemainings;
-        }
-        else{
-            savingBalanceError.style.display = 'block';
-        }
+                // remainings
+               const newRemainings = previousBalance - newSavings;
+                remainings.innerText = newRemainings;
+                }
+                else{
+                savingBalanceError.style.display = 'block';
+                }
     }
     else{
         savingsError.style.display = 'block';
