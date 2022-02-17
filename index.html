@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap link  -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- vanila css link -->
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
@@ -30,19 +31,21 @@
                 <h4>Total Expense:<span id="total-expense">0</span></h4>
                 <h4>Balance:<span id="balance-amount">0</span></h4>
         
-                <h4>Save:<input id="saving-input" type="text" value="0"> % <button id="save-button" class="bg-primary bg-gradient mb-3 text-white fs-4 px-3 py-2 rounded-3">Save</button></h4>
+                <h4>Save: <input id="saving-input" type="text" value="0"> % <button id="save-button" class="bg-primary bg-gradient mb-3 text-white fs-4 px-3 py-2 rounded-3">Save</button></h4>
                 <h4 class="mb-3">Saving Amount:<span id="saving-amount">0</span></h4>
                 <h4 class="mb-3">Remaining Balance:<span id="remaining-balance">0</span></h4>
             </div>
           </div>
+          <div class="error-section">
+            <h5 id="string-error" class="notify fs-4">❌error: input must be a number</h5>
+            <h5 id="negative-error" class="notify fs-4">❌error: input must be a positive number</h5>
+            <h5 id="savings-error" class="notify fs-4">❌error: savings is higher then your Balance</h5>
+        </div>
 
-
-
+    </section>
     <!-- bootstrap link  -->
     <script src="js/bootstrap.bundle.min.js"></script>
-
     <!-- javascript link  -->
     <script src="js/script.js"></script>
-    </section>
 </body>
 </html>

@@ -16,13 +16,13 @@ document.getElementById('calculate-button').addEventListener('click', function()
             const rentAmount = getInputValue('rent-input');
             const otherAmount = getInputValue('other-input');
 
-            // get the expense field and convert it
+            // get the expense field and float it
             const totalExpense = document.getElementById('total-expense');
-            const previousExpenseAmountText = totalExpense.innerText;
-            const previousExpenseAmount = parseFloat(previousExpenseAmountText);
-            
+           const previousExpenseAmountText = totalExpense.innerText;
+            const previousExpenseAmount = parseFloat(previousExpenseAmountText); 
+                   
            const newExpenseAmount = previousExpenseAmount + foodAmount + rentAmount + otherAmount;
-            totalExpense.innerText = newExpenseAmount;
+           totalExpense.innerText = newExpenseAmount; 
 
 
             // get balance amount and update 
@@ -32,7 +32,7 @@ document.getElementById('calculate-button').addEventListener('click', function()
 
             // update balance amount 
             const newBalance = incomeAmount - newExpenseAmount;
-            balanceAmount.innerText = newBalance;
+            balanceAmount.innerText = newBalance;       
 });
 
 

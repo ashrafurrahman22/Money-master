@@ -10,3 +10,17 @@ input{
     width: 25%;
     border-radius: 8px;
 };
+.notify {
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    background: #222436;
+    margin-top: 20px;
+    border-radius: 15px;
+    padding: 5px 20px;
+    display: none;
+}
+.error-section{
+    width: 50%;
+    margin: 0 auto;
+};
